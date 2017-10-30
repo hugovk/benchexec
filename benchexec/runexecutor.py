@@ -954,7 +954,7 @@ class RunExecutor(containerexecutor.ContainerExecutor):
 
         result['exitcode'] = returnvalue
         if energy:
-            if packages == True:
+            if packages:
                 result['cpuenergy'] = energy
             else:
                 result['cpuenergy'] = {pkg: energy[pkg] for pkg in energy if pkg in packages}

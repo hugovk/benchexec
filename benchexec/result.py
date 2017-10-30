@@ -269,10 +269,10 @@ def score_for_task(filename, properties, category, result):
     expected = satisfies_file_property(filename, properties)
     if expected is None:
         return 0
-    elif expected == True:
+    elif expected:
         # expected result is "true", result was "true" or "false"
         return _SCORE_CORRECT_TRUE if correct else _SCORE_WRONG_FALSE
-    elif expected == False:
+    elif not expected:
         if correct:
             # expected result is "false", result was "false" with correct property
             return _SCORE_CORRECT_FALSE

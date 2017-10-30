@@ -113,7 +113,7 @@ class BenchExecIntegrationTests(unittest.TestCase):
 
         xml_suffix = '.xml.bz2' if compress else '.xml'
 
-        if rundefs == []:
+        if not rundefs:
             expected_files = []
         else:
             expected_files = ['logfiles.zip' if compress else 'logfiles']
